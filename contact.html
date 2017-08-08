@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E TRAC | Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="css/Footer-Basic.css">
+    <link rel="stylesheet" href="css/Google-Style-Login.css">
+    <link rel="stylesheet" href="css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="css/Navigation-with-Button1.css">
+    <link rel="stylesheet" href="css/Navigation-with-Search1.css">
+    <link rel="stylesheet" href="css/Social-Icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-inverse navigation-clean-search">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="/">E TRAC</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-default navbar-btn navbar-right action-button" role="button" href="/login">Manager Login</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active" role="presentation"><a href="#">About </a></li>
+                        <li role="presentation"><a href="/team">Design Team</a></li>
+                        <li role="presentation"><a href="/contact">Contact </a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left" target="_self">
+                        <div class="form-group">
+                            <label class="control-label" for="search-field"><i class="glyphicon glyphicon-search"></i></label>
+                            <input class="form-control search-field" type="search" name="search" id="search-field" placeholder='Search'>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div></div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top:20px;">
+            <div class="container">
+                <div class="modal fade" role="dialog" tabindex="-1" id="modal1">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <h4 class="modal-title">Contact Information</h4></div>
+                            <div class="modal-body">
+                                <form action="javascript:void();" method="get" id="contactForm">
+                                    <input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.mywebsite.com">
+                                    <input class="form-control" type="hidden" name="subject" value="My Contact Form">
+                                    <input class="form-control" type="hidden" name="to" value="email@mywebsite.com">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div id="modal-successfail"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6" id="modal-message">
+                                            <fieldset>
+                                                <legend><i class="fa fa-envelope"></i> Contact Us</legend>
+                                            </fieldset>
+                                            <div class="form-group has-feedback">
+                                                <label class="control-label" for="modal_from_name">Name</label>
+                                                <input class="form-control" type="text" name="from_name" required="" placeholder="Full Name" id="modal_from_name" tabindex="-1">
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <label class="control-label" for="modal_from_email">Email</label>
+                                                <input class="form-control" type="email" name="from_email" required="" placeholder="Email Address" id="modal_from_email">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group has-feedback">
+                                                        <label class="control-label" for="modal_from_phone">Phone</label>
+                                                        <input class="form-control" type="text" name="from_phone" placeholder="Primary Phone" id="modal_from_phone">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="modal_calltime">Best Time to Call</label>
+                                                        <select class="form-control" name="Call Time" id="modal_calltime">
+                                                            <option value="Morning" selected="">Morning</option>
+                                                            <option value="Afternoon">Afternoon</option>
+                                                            <option value="Evening">Evening</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label" for="modal_comments">Comments</label>
+                                                <textarea class="form-control" rows="5" name="Comments" placeholder="Enter comments here" id="modal_comments"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-primary btn-block" type="submit">Send <i class="fa fa-chevron-circle-right"></i></button>
+                                            </div>
+                                            <hr class="visible-xs-block visible-sm-block">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <legend> <i class="fa fa-location-arrow"></i> Locate Us</legend>
+                                            </fieldset>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="static-map">
+                                                        <a href="https://www.google.com/maps/place/2+15th+St+NW+Washington+DC+20024" target="_blank"><img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?autoscale=2&amp;size=600x210&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C582+1801+W+International+Speedway+Blvd+Daytona+Beach+FL+32114&amp;zoom=12"
+                                                            alt="Google Map of Washington Monument"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <fieldset>
+                                                        <legend><i class="fa fa-envelope"></i> Contact Us</legend>
+                                                    </fieldset>
+                                                    <div><span><strong>Name</strong></span></div>
+                                                    <div><span>email@address.com</span></div>
+                                                    <div><span>www.awebsite.com</span></div>
+                                                    <hr class="visible-xs-block">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <fieldset>
+                                                        <legend><i class="fa fa-location-arrow"></i> Our Address</legend>
+                                                    </fieldset>
+                                                    <div><span><strong>Office Name</strong></span></div>
+                                                    <div><span>55 Icannot Dr.</span></div>
+                                                    <div><span>Daytona Beach, FL 81500</span></div>
+                                                    <div>
+                                                        <abbr data-toggle="tooltip" data-placement="top" title="Office Phone: 555-867-5309">O:</abbr> 555-867-5309
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="javascript:void();" method="get" id="contactForm">
+                    <input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.mywebsite.com">
+                    <input class="form-control" type="hidden" name="subject" value="My Contact Form">
+                    <input class="form-control" type="hidden" name="to" value="email@mywebsite.com">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="successfail"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" id="message">
+                            <fieldset>
+                                <legend class="block-title"><i class="fa fa-envelope"></i> Contact Us</legend>
+                            </fieldset>
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="from_name">Name</label>
+                                <input class="form-control" type="text" name="from_name" required="" placeholder="Full Name" id="from_name" tabindex="-1">
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="from_email">Email</label>
+                                <input class="form-control" type="email" name="from_email" required="" placeholder="Email Address" id="from_email">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group has-feedback">
+                                        <label class="control-label" for="from_phone">Phone</label>
+                                        <input class="form-control" type="text" name="from_phone" placeholder="Primary Phone" id="from_phone">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="calltime">Best Time to Call</label>
+                                        <select class="form-control" name="Call Time" id="calltime">
+                                            <option value="Morning" selected="">Morning</option>
+                                            <option value="Afternoon">Afternoon</option>
+                                            <option value="Evening">Evening</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="comments">Comments</label>
+                                <textarea class="form-control" rows="5" name="Comments" placeholder="Enter comments here" id="comments"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block" type="submit">Send <i class="fa fa-chevron-circle-right"></i></button>
+                            </div>
+                            <hr class="visible-xs-block visible-sm-block">
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend class="block-title"> <i class="fa fa-location-arrow"></i> Locate Us</legend>
+                            </fieldset>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="static-map">
+                                        <a href="https://www.google.com/maps/place/2+15th+St+NW+Washington+DC+20024" target="_blank"><img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?autoscale=2&amp;size=600x210&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C582+1801+W+International+Speedway+Blvd+Daytona+Beach+FL+32114&amp;zoom=12"
+                                            alt="Google Map of Washington Monument"></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <fieldset>
+                                        <legend><i class="fa fa-envelope"></i> Contact Us</legend>
+                                    </fieldset>
+                                    <div><span><strong>Name</strong></span></div>
+                                    <div><span>email@address.com</span></div>
+                                    <div><span>www.awebsite.com</span></div>
+                                    <hr class="visible-xs-block">
+                                </div>
+                                <div class="col-sm-6">
+                                    <fieldset>
+                                        <legend><i class="fa fa-location-arrow"></i> Our Address</legend>
+                                    </fieldset>
+                                    <div><span><strong>Office Name</strong></span></div>
+                                    <div><span>55 Icannot Dr.</span></div>
+                                    <div><span>Daytona Beach, FL 81500</span></div>
+                                    <div>
+                                        <abbr data-toggle="tooltip" data-placement="top" title="Office Phone: 555-867-5309">O:</abbr> 555-867-5309
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li><a href="/">Home</a></li>
+                <li><a href="/team">Design Team</a></li>
+                <li><a href="/contact">Contact </a></li>
+                <li><a href="/login">Manager Portal</a></li>
+            </ul>
+            <p class="copyright">Wes Van Duine, Cesar Perez, Nick Verges © 2017</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/Contact-FormModal-Contact-Form-with-Google-Map.js"></script>
+</body>
+
+</html>
