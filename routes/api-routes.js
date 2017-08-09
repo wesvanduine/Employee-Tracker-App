@@ -12,6 +12,10 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
+    app.get('/', function(req, res) {
+        res.render('index');
+    })
+
     // GET route for getting all of the posts
     app.get("/api/posts", function(req, res) {
         var query = {};
