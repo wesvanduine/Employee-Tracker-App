@@ -44,6 +44,6 @@ module.exports = function(sequalize, DataTypes) {
                     }
                 });
             };
-
+            //returning Schedule
             return Schedule;
         };
