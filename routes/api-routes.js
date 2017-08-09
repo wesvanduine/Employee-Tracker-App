@@ -14,6 +14,10 @@ module.exports = function(app) {
 
     app.get('/', function(req, res) {
         res.render('index');
+    });
+
+    app.get('/contact', function(req, res) {
+        res.render('partials/contact')
     })
 
     // GET route for getting all of the posts

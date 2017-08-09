@@ -1,5 +1,5 @@
 .login-clean {
-  background:#f1f7fc;
+  /*background:#ff5c5c;*/
   padding:80px 0;
 }
 
@@ -7,7 +7,7 @@
   max-width:320px;
   width:90%;
   margin:0 auto;
-  background-color:#ffffff;
+  background-color:#545155;
   padding:40px;
   border-radius:4px;
   color:#505e6c;
@@ -22,7 +22,7 @@
 }
 
 .login-clean form .form-control {
-  background:#f7f9fc;
+  background:#fff1d7;
   border:none;
   border-bottom:1px solid #dfe7f1;
   border-radius:0;
@@ -45,7 +45,7 @@
 }
 
 .login-clean form .btn-primary:hover, .login-clean form .btn-primary:active {
-  background:#eb3b60;
+  background:#ff5c5c;
 }
 
 .login-clean form .btn-primary:active {
@@ -56,7 +56,7 @@
   display:block;
   text-align:center;
   font-size:12px;
-  color:#6f7a85;
+  color:#fff1d7;
   opacity:0.9;
   text-decoration:none;
 }

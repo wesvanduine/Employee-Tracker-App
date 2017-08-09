@@ -1,46 +1,19 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 text-center" id="top-bar">
-            <img src="../public/assets/img/burger2.png" alt="burger" id='burgerlogo'/>
-            <h1> Eat-Da-Burger! </h1>
-        </div>
-        <div class="col-xs-6 text-center" class="task">
-            <div class="row">
-              {{#each burger_data}}
-                  {{#unless this.devoured}}
-                <div class="col-xs-9 text-center">
-                    <pre>{{this.id}}. {{this.burger_name}}
-                    </pre>
-                          <!-- {{this.Date}} -->
-                </div>
-                <div class="col-xs-3 text-center">
-                    <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
-                        <input input type="hidden" type="text" name="burger_id" value={{this.id}}><br>
-                        <button type="submit" class="btn btn-default">Devour it!</button>
-                    </form>
-                </div>
-                {{/unless}}
-              {{/each}}
+<div class='container'>
+    <div class="login-clean">
+    <h2 style='text-align: center'>The easier way to pay your Employees</h2>
+        <form method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="img/logo.png"></div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email">
             </div>
-        </div>
-        <div class="col-xs-6 text-center" class="task">
-              {{#each burger_data}}
-                  {{#if this.devoured}}
-                      <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
-                {{/if}}
-              {{/each}}
-        </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Log In</button>
+            </div><a href="#" class="forgot">Forgot your email or password?</a></form>
     </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 text-center enter_section">
-            <form action="/burgers/create" method="POST">
-                <input type="text" class="form-control" name="burger_name" value="" id="enter_text">
-                <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
-            </form>
-            <p>Enter a burger you want to eat!</p>
-        </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </div>
