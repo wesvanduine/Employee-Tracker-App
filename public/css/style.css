@@ -1,0 +1,76 @@
+.container-fluid {
+	background: #545155;
+	height: 90px;
+}
+
+img {
+	margin-left: 20px;
+
+}
+
+.tagline {
+	display: inline-block;
+	margin: 20px 0 20px 20px;
+	font-family: 'Josefin Sans', sans-serif; 
+	color: #ff5c5c;
+	font-size: 30.3px;
+	border-left: 1px solid #eee;
+	padding-left: 10px;
+}
+
+
+
+.footer {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: #545155; 
+}
+
+.text-muted {
+	font-family: 'Josefin Sans', sans-serif; 
+	color: #ff5c5c;
+	font-size: 1em;
+	padding-top: 30px;
+	text-align: center;
+}
+
+
+ #custom-search-form {
+        margin:0;
+        margin-top: 5px;
+        padding: 0;
+    }
+ 
+    #custom-search-form .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+ 
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+    #custom-search-form button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+    .search-query:focus + button {
+        z-index: 3;   
+    }
