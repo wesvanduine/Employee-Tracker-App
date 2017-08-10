@@ -20,14 +20,14 @@ module.exports = function(sequalize, DataTypes) {
                     validate: {
                         len[1]
                     },
-                    timeOut: {
+                timeOut: {
                         type: DataTypes.TIME
                         allowNull: false,
                         validate: {
                             len[1]
                         }
                     },
-                    totalHours: {
+                totalHours: {
                         type: DataTypes.INTEGER(255),
                         allowNull: false,
                         validate: {
@@ -35,7 +35,7 @@ module.exports = function(sequalize, DataTypes) {
                         }
                     },
                 )
-            }; 
+            };
 
             Schedule.associate = function(models) {
                 Schedule.belongsTo(models.Employees, {
