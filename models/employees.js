@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		phone_number: {
-			type: DATATYPES.STRING,
+			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
 				len: [10],
@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		address: {
-			type: DATATYPES.STRING,
+			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
 				is: /[a-z\A-Z\d]/g
@@ -49,13 +49,13 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		// Determine employee admin access
 		admin: {
-			type: DATATYPE.BOOLEAN,
+			type: DataTypes.BOOLEAN,
 			allowNull: false,
 			defaultValue: false
 		},
 
 		username: {
-			type: DATATYPE.STRING,
+			type: DataTypes.STRING,
 			allowNull: false,
 			unique: {
 				args: true,
@@ -64,22 +64,21 @@ module.exports = function(sequelize, DataTypes) {
 			},
 			validate: {
 				max: {
-					args: 20,
+					args: 15,
 					msg: 'The username you entered is invalid or more than 20 characters.'
 				}
 			}
 		},
 		password: {
-			type: DATATYPE.STRING,
+			type: DataTypes.STRING, // Maybe DATATYPE.BINARY
 			allowNull: false,
 			validate: {
 				len: {
-					args: [6,10],
-					msq: 'The password you entered needs to be 6 - 10 characters.'
+					args: [8,16],
+					msq: 'The password you entered needs to be 8 - 16 characters.'
 				}
 			}
 		}
-
 	});
 
 	Employees.associate = function(models) {
