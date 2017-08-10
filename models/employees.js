@@ -86,5 +86,5 @@ module.exports = function(sequelize, DataTypes) {
 			onDelete: "cascade"
 		});
 	};
-	return Employee;
+	return Employees;
 };
