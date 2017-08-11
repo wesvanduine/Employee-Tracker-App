@@ -2,7 +2,7 @@
 
 <h1 class= 'section-heading' style='text-align: center;'>Employee Management</h1>
 
-<form class="well form-horizontal" action="api/add-employees" method="POST"  id="add-employee-form">
+<form class="well form-horizontal" method="POST" action="/api" id="add-employee-form">
 
     <fieldset>
 
@@ -100,45 +100,39 @@
         <div class="col-md-4">
             <div class="radio">
                 <label>
-                    <input type="radio" name="admin" value="yes" /> Yes
+                    <input type="radio" name="admin" value="1" /> Yes
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="admin" value="no" /> No
+                    <input type="radio" name="admin" value="0" /> No
                 </label>
             </div>
         </div>
     </div>
 
-     <button type="submit" class="btn btn-secondary" id="add-employee-button" >Add Employee <span class="fa fa-user-plus"></span></button>
+     <button type="submit" class="btn btn-secondary" id="add-employee-button">Add Employee <span class="fa fa-user-plus"></span></button>
 
-    <!-- Text area -->
-    <!-- <div class="form-group">
-      <label class="col-md-4 control-label">Project Description</label>
-        <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            	<textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
-      </div>
-      </div>
-    </div> -->
+    </fieldset>
+
+</form>
+
 
     <!-- Success message -->
-    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i>      Thanks for contacting us, we will get back to you shortly.
+    </div>
 
     <!-- Button -->
-    <div class="form-group">
+<!--     <div class="form-group">
 
       <label class="col-md-4 control-label"></label>
       <div class="col-md-4">
 
     </div>
-    
+ -->
 </div>
 
-</fieldset>
-</form>
+
 </div>
 </div>
 

@@ -19,32 +19,50 @@ module.exports = function(app) {
     });
 
     app.get('/api', function(req, res) {
+        
         db.Employees.findAll({}).then(function(data) {
             res.json(data);
         });
+
     });
 
 
-    // app.post('api/add-employees', function(req, res) {
+    app.post('/api', function(req, res) {
+        
+        db.Employees.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            phone_number: req.body.phone_number, 
+            address: req.body.address,
+            username: req.body.username,
+            password: req.body.password,
+            admin: req.body.admin
+        }).then(function(data) {
+            res.redirect('/');
+            console.log(data);
+        });
+    });
 
-    //     alert('JKLAFDALJKDFS');
+    // app.post('/api', function(req, res) {
 
     //     db.Employees.create({
-    //         first_name: req.body.first_name,
-    //         last_name: req.body.last_name,
-    //         email: req.body.email,
-    //         phone_number: req.body.phone_number, 
-    //         address: req.body.address,
-    //         username: req.body.username,
-    //         password: req.body.password,
-    //         admin: req.body.admin
+    //         first_name: "first name",
+    //         last_name: 'last name'
     //     }).then(function(data) {
-    //         res.redirect('/');
     //         console.log(data);
-    //         alert('success!!!!!!!');
-    //         });
-
+    //     })
     // });
+
+    // app.get('api/employee-add', function(req, res) {
+
+    //     db.Employees.findAll({}).then(function(data) {
+    //         res.json(data);
+    //     });
+
+    // })
+
+
 
 
     // // GET route for getting all of the posts
