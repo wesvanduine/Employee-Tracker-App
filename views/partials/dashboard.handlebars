@@ -26,7 +26,8 @@
                 <th>Password</th>
                 <th>Admin (y/n)</th>
                 <th>Created At</th>
-                <th>Updated At</th>
+                {{!-- <th>Updated At</th> --}}
+                <th>Edit/Delete</th>
             </tr>
         </thead>
     
@@ -43,7 +44,11 @@
                 <td>{{ password }}</td>
                 <td>{{ admin }}</td>
                 <td>{{ createdAt }}</td>
-                <td>{{ updatedAt }}</td>
+                {{!-- <td>{{ updatedAt }}</td> --}}
+                <td> 
+                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>   
+                    <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                </td>
             </tr>
 
       {{/each }}      

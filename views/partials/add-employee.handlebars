@@ -128,7 +128,7 @@
   <div class='col-lg-6'>
 
   <!-- Form tag for the POST route to create an employee -->
-  <form class="well form-horizontal" method="POST" action="/api/create" id="add-employee-form">
+  <form class="well form-horizontal" method="POST" action="/api/edit" id="edit-employee-form">
 
       <fieldset>
 
@@ -246,13 +246,10 @@
 
   </form>
 
+{{!-- End Row --}}
   </div>
 
-
-
-
-
-  <!-- end row -->
+{{!-- End Container --}}
 </div>
 
 
@@ -268,9 +265,12 @@
 
     </div>
  -->
+
 </div>
 
-{{>dashboard}}
+
+    {{!-- Displays Table of all employees --}}
+     {{>dashboard}}
 
 
 </div>
