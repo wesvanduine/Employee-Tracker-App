@@ -28,5 +28,9 @@ module.exports = function(app) {
         res.render('partials/team');
     });
 
+    app.get('/add-employee', function(req, res) {
+        res.render('partials/add-employee');
+    });
+
 };
 
