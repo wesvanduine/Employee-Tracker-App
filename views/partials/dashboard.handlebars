@@ -29,20 +29,20 @@
             </tr>
         </thead>
     
-     {{#each Employees.DataValues }}
+     {{#each Employees }}
 
             <tr>
-                <td> {{ dataValues.first_name }} </td>
-               {{!--  <td> {{ this.first_name }} </td>
-                <td> {{ this.last_name }} </td> --}}
-                <td>Systems Administrator</td>
-                <td>555-555-5555</td>
-                <td>123 Honey Ln.</td>
-                <td>Username</td>
-                <td>Password</td>
-                <td>Yes</td>
-                <td>Today</td>
-                <td>Also Today</td>
+                <td>{{ id }} </td>
+                <td>{{ first_name }} </td>
+                <td>{{ last_name }} </td>
+                <td>{{ email }}</td>
+                <td>{{ phone_number }}</td>
+                <td>{{ address }}</td>
+                <td>{{ username }}</td>
+                <td>{{ password }}</td>
+                <td>{{ admin }}</td>
+                <td>{{ createdAt }}</td>
+                <td>{{ updatedAt }}</td>
             </tr>
 
       {{/each }}      
