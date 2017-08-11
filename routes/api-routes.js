@@ -27,7 +27,7 @@ module.exports = function(app) {
     });
 
 
-    app.post('/api', function(req, res) {
+    app.post('/api/create', function(req, res) {
         
         db.Employees.create({
             first_name: req.body.first_name,
@@ -39,10 +39,19 @@ module.exports = function(app) {
             password: req.body.password,
             admin: req.body.admin
         }).then(function(data) {
-            res.redirect('/');
+            res.redirect('/add-employee');
+
             // console.log(data);
         });
     });
+
+    app.get('/api/hours', function(req, res) {
+        db.Schedule.findAll({}).then(function(Schedule) {
+            res.json(Schedule);
+        });
+    });
+
+
 
     // app.post('/api', function(req, res) {
 

@@ -22,12 +22,17 @@ module.exports = function(app) {
     });
 
     app.get('/dashboard', function(req, res) {
+        res.render("partials/dashboard")
+    });
 
-        db.Employees.findAll({}).then(function(data) {
+    app.get('/time-management', function(req, res) {
 
-            console.log("your data \n",data);
-            res.render("partials/dashboard", { Employees: data });
+        db.Schedule.findAll({}).then(function(data) {
+
+            // console.log("your data \n",data);
+            res.render("partials/time-management", { Schedule: data });
         });
+
     });
 
     app.get('/team', function(req, res) {
@@ -35,7 +40,11 @@ module.exports = function(app) {
     });
 
     app.get('/add-employee', function(req, res) {
-        res.render('partials/add-employee');
+                db.Employees.findAll({}).then(function(data) {
+
+            // console.log("your data \n",data);
+            res.render("partials/add-employee", { Employees: data });
+        });
     });
 
 };

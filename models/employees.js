@@ -83,10 +83,10 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	});
 
-	// Employees.associate = function(models) {
-	// 	Employees.hasMany(models.Schedule, {
-	// 		onDelete: "cascade"
-	// 	});
-	// };
+	Employees.associate = function(models) {
+		Employees.hasMany(models.Schedule, {
+			onDelete: "cascade"
+		});
+	};
 	return Employees;
 };
