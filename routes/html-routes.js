@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var db = require('../models')
 
 // Routes
 // =============================================================
@@ -21,7 +22,12 @@ module.exports = function(app) {
     });
 
     app.get('/dashboard', function(req, res) {
-        res.render('partials/dashboard');
+
+        db.Employees.findAll({}).then(function(data) {
+
+            console.log("your data \n",data);
+            res.render("partials/dashboard", { Employees: data });
+        });
     });
 
     app.get('/team', function(req, res) {

@@ -20,8 +20,8 @@ module.exports = function(app) {
 
     app.get('/api', function(req, res) {
         
-        db.Employees.findAll({}).then(function(data) {
-            res.json(data);
+        db.Employees.findAll({}).then(function(Employee) {
+            res.json(Employee);
         });
 
     });
