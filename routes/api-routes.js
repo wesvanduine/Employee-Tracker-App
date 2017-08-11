@@ -40,7 +40,7 @@ module.exports = function(app) {
             admin: req.body.admin
         }).then(function(data) {
             res.redirect('/');
-            console.log(data);
+            // console.log(data);
         });
     });
 
