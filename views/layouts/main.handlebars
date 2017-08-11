@@ -1,15 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Eat-Da-Burger! ...Sequelized</title>
-        <meta charset="UTF-8">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-        <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css" />
-    </head>
-    <body>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETRAC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="css/ebs-contact-form.css">
+    <link rel="stylesheet" href="css/Footer-Basic.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/header1.css">
+    <link rel="stylesheet" href="css/header2.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Login-Form-Clean.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navigation-clean" style="padding:0px;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="/"><img src="img/logo.png">E TRAC</a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="/dashboard">Dashboard </a></li>
+                    <li role="presentation"><a href="/add-employee">Add Employee </a></li>
+                    <li role="presentation"><a href="/team">Design Team </a></li>
+                    <li role="presentation"><a href="/contact">Contact </a></li>
+                    <li class="dropdown open"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="#" style="padding:10px;">Andrew Stevens<span class="caret"></span><img src="img/andrew.jpg" style="width:30px;height:30px;padding:0;margin-left:5px;"></a>
+                        <ul
+                        class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#">Logout <i class="fa fa-user-times" id="logouticon"></i></a></li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
         {{{ body }}}
-    </body>
+
+<!--         {{>dashboard}}
+
+        {{>team}}
+
+        {{>contact}}
+ -->
+ 
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://github.com/wesvanduine/Employee-Tracker-App" target="_blank"><i class="fa fa-github-alt"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard </a></li>
+                <li><a href='/add-employee'>Add Employee </a></li>
+                <li><a href="/team">Design Team </a></li>
+                <li><a href="/contact">Contact </a></li>
+            </ul>
+            <p class="copyright">Wes Van Duine, Cesar Perez, Nick Verges © 2017</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
 </html>

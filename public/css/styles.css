@@ -1,0 +1,14 @@
+body {
+	background-color: #fff;
+}
+
+#success_message{ display: none;}
+
+#add-employee-button {
+	background-color: #ff5c5c;
+}
+
+#add-employee-container {
+	margin-top: 40px;
+}
+
