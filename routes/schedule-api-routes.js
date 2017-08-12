@@ -12,47 +12,31 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-    // GET route to display a JSON view of the Employees table
-    app.get('/api/employees', function(req, res) {
-        
-        db.Employees.findAll({}).then(function(Employee) {
-            res.json(Employee);
-        });
-
-    });
-
 
     // GET route to display a JSON view of the Schedule table
     app.get('/api/schedule', function(req, res) {
 
-        db.Schedule.findAll({}).then(function(Schedule) {
+        db.Schedule.findAll({
+            include: [db.Employees]
+        }).then(function(Schedule) {
             res.json(Schedule);
         });
     });
 
-
-    // POST route to add an Employee to the 'Employees' table
-    app.post('/api/create', function(req, res) {
-        
-        // sequelize create method
-        db.Employees.create({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            phone_number: req.body.phone_number, 
-            address: req.body.address,
-            username: req.body.username,
-            password: req.body.password,
-            admin: req.body.admin
-        }).then(function(data) {
-
-            // redirects user to same page
-            res.redirect('/add-employee');
-
-            // this doesn't work but I want it to. Need to figure out how to join 'findAll' statements so I can render 2 views
-            // res.render('partials/add-employee');
+    app.get("/api/schedule/:id", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+        db.Schedule.findOne({
+          where: {
+            id: req.params.id
+          },
+          include: [db.Employees]
+        }).then(function(dbSchedule) {
+          res.json(dbSchedule);
         });
-    });
+      });
+
 
     // POST route to add hour information to the Schedule table
     app.post('/api/add-hours', function(req, res) {
@@ -64,8 +48,6 @@ module.exports = function(app) {
             timeIn: req.body.monday,
             timeOut: req.body.tuesday,
             totalHours: req.body.total_hours
-
-
         }).then(function(data) {
 
             // redirects user to current page
@@ -78,21 +60,24 @@ module.exports = function(app) {
     });
 
 
+    // DELETE route for deleting hours
+    app.delete("/api/add-hours/:id", function(req, res) {
 
-    // DELETE route for deleting posts
-    // app.delete("/api/posts/:id", function(req, res) {
-    //     db.Post.destroy({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //     }).then(function(dbPost) {
-    //         res.json(dbPost);
-    //     });
-    // });
+        db.Employees.destroy({
+            where: {
+                id: req.params.id
+            },
+            include: [db.Schedule]
+        }).then(function(data) {
+            res.redirect('/add-employee');
+        });
+    });
+
+
 
     // // PUT route for updating posts
     // app.put("/api/posts", function(req, res) {
-    //     db.Post.update(
+    //     db.Employees.update(
     //         req.body, {
     //             where: {
     //                 id: req.body.id
