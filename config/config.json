@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "ETRAC",
-    "host": "127.0.0.1",
+    "password": "Stars4life",
+    "database": "employeeTracker_db",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
