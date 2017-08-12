@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Stars4life",
-    "database": "employeeTracker_db",
+    "password": "",
+    "database": "ETRAC",
     "host": "localhost",
     "dialect": "mysql"
   },

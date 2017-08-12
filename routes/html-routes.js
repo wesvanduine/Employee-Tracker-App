@@ -43,6 +43,11 @@ module.exports = function(app) {
         });
     });    
 
+    // App Info page
+    app.get('/app-info', function(req, res) {
+        res.render("partials/app-info")
+    });
+
     // Design team page
     app.get('/team', function(req, res) {
         res.render('partials/team');
