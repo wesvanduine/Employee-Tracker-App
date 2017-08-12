@@ -104,7 +104,7 @@
   </div>
   <div class='col-lg-6'>
   <!-- Form tag for the POST route to create an employee -->
-  <form class="well form-horizontal" method="POST" action="/api/edit" id="edit-employee-form">
+  <form class="well form-horizontal" method="POST" action="/api/employees/:id" id="edit-employee-form">
       <fieldset>
       <!-- Form Name -->
       <legend>
@@ -210,7 +210,7 @@
           </div>
       </div>
       <!-- INSERT A DROPDOWN TO CHOOSE AN EMPLOYEE TO EDIT -->
-          <form method="POST" action='/api/edit/:id?_method=UPDATE'>
+          <form method="POST" action='/api/employees/:id?_method=UPDATE'>
               <button type="submit" class="btn btn-primary center-block" id="edit-employee-button">Edit Employee <span class="fa fa-user-plus"></span></button>
           </form>
       </fieldset>

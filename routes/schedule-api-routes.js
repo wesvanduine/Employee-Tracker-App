@@ -45,9 +45,7 @@ module.exports = function(app) {
         db.Schedule.create({
             date_time: req.body.first_name,
             week: req.body.last_name,
-            timeIn: req.body.monday,
-            timeOut: req.body.tuesday,
-            totalHours: req.body.total_hours
+            totalHours: req.body.sum
         }).then(function(data) {
 
             // redirects user to current page
@@ -59,32 +57,31 @@ module.exports = function(app) {
         });
     });
 
-
     // DELETE route for deleting hours
     app.delete("/api/add-hours/:id", function(req, res) {
 
-        db.Employees.destroy({
+        db.Schedule.destroy({
             where: {
                 id: req.params.id
             },
             include: [db.Schedule]
         }).then(function(data) {
-            res.redirect('/add-employee');
+            res.redirect('/add-hours');
         });
     });
 
 
 
-    // // PUT route for updating posts
-    // app.put("/api/posts", function(req, res) {
-    //     db.Employees.update(
-    //         req.body, {
-    //             where: {
-    //                 id: req.body.id
-    //             }
-    //         }).then(function(dbPost) {
-    //         res.json(dbPost);
-    //     });
-    // });
+    // PUT route for updating posts
+    app.put("/api/add-hours", function(req, res) {
+        db.Schedule.update(
+            req.body, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function(dbPost) {
+            res.json(dbPost);
+        });
+    });
 
 };
