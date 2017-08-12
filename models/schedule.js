@@ -48,4 +48,4 @@ module.exports = function(sequalize, DataTypes) {
 
 	return Schedule;
 };
->>>>>>> nick
+
