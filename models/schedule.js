@@ -4,23 +4,23 @@ module.exports = function(sequalize, DataTypes) {
 			date_time: {
 				type: DataTypes.INTEGER(255),
 				allowNull: true,
-				// validate: {
-				// 	len: [1]
-				// }
+				validate: {
+					len: [1]
+				}
 			},
 			week: {
 				type: DataTypes.INTEGER(255),
 				allowNull: true,
-				// validate: {
-				// 	len: [1]
-				// }
+				validate: {
+					len: [1]
+				}
 			},
 			timeIn: {
 				type: DataTypes.INTEGER(255),
 				allowNull: true,
-				// validate: {
-				// 	// len: [1]
-				// }
+				validate: {
+					// len: [1]
+				}
 			},
 			timeOut: {
 				type: DataTypes.INTEGER(255),
@@ -32,9 +32,9 @@ module.exports = function(sequalize, DataTypes) {
 			totalHours: {
 				type: DataTypes.INTEGER(255),
 				allowNull: true,
-				// validate: {
-				// 	len: [1]
-				// }
+				validate: {
+					len: [1]
+				}
 			}
 	}); 
 

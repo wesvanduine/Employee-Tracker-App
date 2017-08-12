@@ -44,6 +44,7 @@ module.exports = function(app) {
             username: req.body.username,
             password: req.body.password,
             admin: req.body.admin
+
         }).then(function(data) {
 
             // redirects user to same page
@@ -65,7 +66,6 @@ module.exports = function(app) {
             timeOut: req.body.tuesday,
             totalHours: req.body.total_hours
 
-
         }).then(function(data) {
 
             // redirects user to current page
@@ -78,17 +78,16 @@ module.exports = function(app) {
     });
 
 
-
     // DELETE route for deleting posts
-    // app.delete("/api/posts/:id", function(req, res) {
-    //     db.Post.destroy({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //     }).then(function(dbPost) {
-    //         res.json(dbPost);
-    //     });
-    // });
+    app.delete("/api/delete/:id", function(req, res) {
+        db.Employees.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbEmployees) {
+            res.json(dbEmployees);
+        });
+    });
 
     // // PUT route for updating posts
     // app.put("/api/posts", function(req, res) {

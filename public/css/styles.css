@@ -20,3 +20,9 @@ margin-right: auto;
 display: table-cell;
 vertical-align: middle;
 }
+
+#employee-dropdown {
+	/*float: right;*/
+	/*position: relative;*/
+	/*display: inline-block;*/
+}

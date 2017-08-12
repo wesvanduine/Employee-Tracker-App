@@ -19,6 +19,7 @@
             </div>
         </div>
 
+
         <div class="row" id='hours'>
             <div class="col-sm-1">
                 <div class="form-group">
@@ -80,7 +81,21 @@
 
 
         </div>
-    </form>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+                
+            <select>
+                  
+                  {{#each Schedules }}
+                  
+                  <option> {{ last_name }} </option>
+
+
+                  {{/each}}  
+
+
+            </select>
+  </form>
+
+
+<!--     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
 </div>
