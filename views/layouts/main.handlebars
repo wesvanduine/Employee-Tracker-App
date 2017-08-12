@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/header2.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/Login-Form-Clean.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script> The integrity and crossorigin attributes a
 
 </head>
 
@@ -29,13 +32,15 @@
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><a href="/dashboard">Dashboard </a></li>
+                    {{!-- <li role="presentation"><a href="/dashboard">Dashboard </a></li> --}}
+                    <li role="presentation"><a href="/time-management">Time Management </a></li>
+                    <li role="presentation"><a href="/add-employee">Employee Management </a></li>
                     <li role="presentation"><a href="/team">Design Team </a></li>
                     <li role="presentation"><a href="/contact">Contact </a></li>
                     <li class="dropdown open"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="#" style="padding:10px;">Andrew Stevens<span class="caret"></span><img src="img/andrew.jpg" style="width:30px;height:30px;padding:0;margin-left:5px;"></a>
                         <ul
                         class="dropdown-menu" role="menu">
-                            <li role="presentation"><a href="#">Logout <i class="fa fa-user-times" id="logouticon"></i></a></li>
+                            <li role="presentation"><a href="/">Logout <i class="fa fa-user-times" id="logouticon"></i></a></li>
                 </ul>
                 </li>
                 </ul>
@@ -44,28 +49,29 @@
     </nav>
         
         {{{ body }}}
-<!-- 
-        {{>dashboard}}
+
+<!--         {{>dashboard}}
 
         {{>team}}
 
-        {{>contact}} -->
-
+        {{>contact}}
+ -->
  
     <div class="footer-basic">
         <footer>
             <div class="social"><a href="https://github.com/wesvanduine/Employee-Tracker-App" target="_blank"><i class="fa fa-github-alt"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
                 <li><a href="/">Home</a></li>
-                <li><a href="/dashboard">Dashboard </a></li>
+                {{!-- <li><a href="/dashboard">Dashboard </a></li> --}}
+                <li><a href='time-management'>Time Management </a></li>
+                <li><a href='/add-employee'>Employee Management </a></li>
                 <li><a href="/team">Design Team </a></li>
                 <li><a href="/contact">Contact </a></li>
             </ul>
             <p class="copyright">Wes Van Duine, Cesar Perez, Nick Verges © 2017</p>
         </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,350 @@
+<h1 class= 'section-heading' style='text-align: center;'>Employee Management</h1>
+
+<div class="container" id='add-employee-container'>
+
+<div class='row'>
+
+  <!-- Creates column for the "Add Employee" input box -->
+  <div class='col-lg-6'>
+
+  <!-- Form tag for the POST route to create an employee -->
+  <form class="well form-horizontal" method="POST" action="/api/create" id="add-employee-form">
+
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Add Employee</legend>
+
+      <!-- Text input-->
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">First Name</label>  
+        <div class="col-md-6 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Last Name</label> 
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+             <div class="form-group">
+        <label class="col-md-4 control-label">E-Mail</label>  
+          <div class="col-md-6 inputGroupContainer">  
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Text input-->
+             
+      <div class="form-group">
+        <label class="col-md-4 control-label">Phone #</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        <input name="phone_number" placeholder="(845)555-1212" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+            
+      <div class="form-group">
+        <label class="col-md-4 control-label">Address</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+        <input name="address" placeholder="Address" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+       
+      <div class="form-group">
+        <label class="col-md-4 control-label">Username</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+        <input name="username" placeholder="Username" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+         
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Password</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input name="password" class="form-control"  type="text">
+          </div>
+      </div>
+      </div>
+
+      <!-- radio checks -->
+       <div class="form-group">
+          <label class="col-md-4 control-label">Add as Administrator?</label>
+          <div class="col-md-6">
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="1" /> Yes
+                  </label>
+              </div>
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="0" /> No
+                  </label>
+              </div>
+          </div>
+      </div>
+
+       <button type="submit" class="btn btn-success center-block" id="add-employee-button">Add Employee <span class="fa fa-user-plus"></span></button>
+
+      </fieldset>
+
+  </form>
+
+  </div>
+
+  <div class='col-lg-6'>
+
+  <!-- Form tag for the POST route to create an employee -->
+  <form class="well form-horizontal" method="POST" action="/api/edit" id="edit-employee-form">
+
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Edit Employee</legend>
+
+      <!-- Text input-->
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">First Name</label>  
+        <div class="col-md-6 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Last Name</label> 
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+             <div class="form-group">
+        <label class="col-md-4 control-label">E-Mail</label>  
+          <div class="col-md-6 inputGroupContainer">  
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Text input-->
+             
+      <div class="form-group">
+        <label class="col-md-4 control-label">Phone #</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        <input name="phone_number" placeholder="(845)555-1212" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+            
+      <div class="form-group">
+        <label class="col-md-4 control-label">Address</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+        <input name="address" placeholder="Address" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+       
+      <div class="form-group">
+        <label class="col-md-4 control-label">Username</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+        <input name="username" placeholder="Username" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+         
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Password</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input name="password" class="form-control"  type="text">
+          </div>
+      </div>
+      </div>
+
+      <!-- radio checks -->
+       <div class="form-group">
+          <label class="col-md-4 control-label">Add as Administrator?</label>
+          <div class="col-md-6">
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="1" /> Yes
+                  </label>
+              </div>
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="0" /> No
+                  </label>
+              </div>
+          </div>
+      </div>
+
+
+      <!-- INSERT A DROPDOWN TO CHOOSE AN EMPLOYEE TO EDIT -->
+
+       <button type="submit" class="btn btn-primary center-block" id="edit-employee-button">Edit Employee <span class="fa fa-user-plus"></span></button>
+
+      </fieldset>
+
+  </form>
+
+{{!-- End Row --}}
+  </div>
+
+{{!-- End Container --}}
+</div>
+
+
+{{!--     <!-- Success message -->
+    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i>      Thanks for contacting us, we will get back to you shortly.
+    </div>
+ --}}
+    <!-- Button -->
+<!--     <div class="form-group">
+
+      <label class="col-md-4 control-label"></label>
+      <div class="col-md-4">
+
+    </div>
+ -->
+
+</div>
+
+
+    {{!-- Displays Table of all employees --}}
+     {{>dashboard}}
+
+
+</div>
+</div>
+
+<!-- /.container -->
+
+    <!-- <script type="text/javascript" src='../../js/add-employee.js'></script> -->
+<!-- 
+<script type="text/javascript">
+  
+// Upon clicking submit button
+$("#testbutton").on("click", function() {
+
+      // Creates a new Friend with the input information
+    var newEmployee = {
+      first_name: $('#first_name').val().trim(),
+      last_name: $('#last_name').val().trim(),
+      email: $('#email').val().trim(),
+      phone_number: $('#phone_number').val().trim();
+      address: $('#address').val().trim();
+      username: $('#username').val().trim();
+      password: $('#password').val().trim();
+      admin: $("#admin").val();
+    };
+
+    // Console.logs the new friend information
+    console.log(newEmployee);
+
+    // Grabs the current window URL. Will be used to concatenate the rest of the route for api post
+    var currentURL = window.location.origin;
+
+    // Adds new Friend to API
+    $.post(currentURL + "api/add-employees", newEmployee, function(data) {
+
+
+      if (data == false) {
+
+        alert("Sorry, something went wrong and this friend was not added to the database :(");
+
+      } else {
+
+        // empties input fields
+        clearFields();
+
+      // checks if data was added
+      // if (friend == true) {
+
+        // alerts
+        console.log("Employee added: " + data);
+        alert("Successfully added employee to database!");
+
+      };
+
+    });
+
+});
+
+
+// Function that empties the input fields
+function clearFields() {
+      // Clears survey input fields
+
+  $('#first_name').val('');
+  $('#last_name').val('');
+  $('#email').val('');
+  $('#phone_number').val('');
+  $('#address').val('');
+  $('#username').val('');
+  $('#password').eval('');
+  $("#admin").val('');
+
+};
+
+    // return false;
+
+</script> -->
