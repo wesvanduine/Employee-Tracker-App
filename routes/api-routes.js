@@ -28,7 +28,7 @@ module.exports = function(app) {
             }
         }).then(employee => {
             console.log('Employee: ' + employee);
-            
+
             // Check if matching username was found in database
             if (employee === null) {
                 console.log(`Could not find username '${usernameEntered}' in database.`);
@@ -40,16 +40,14 @@ module.exports = function(app) {
                 if (validPassword) {
                     console.log('UserID: ' + employee.id);
                     req.login(employee.id, (err) => {
-                        res.redirect('/dashboard');
+                        res.redirect('/time-management');
                     });
                 } else {
                     console.log('Password does not match');
                     res.redirect('/');
                 }
             }
-
         });
-        
     });
 
     app.get('/api', function(req, res) {
