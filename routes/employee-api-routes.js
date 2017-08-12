@@ -80,7 +80,7 @@ module.exports = function(app) {
             res.json(data);
         });
     });
-    // ----------------------------------------------------- //
+    // ---------------------- DON'T CHANGE THE ROUTE, ONLY THE SEQUELIZE QUERY ------------------------------- //
 
 
     // PUT route for updating posts
