@@ -62,6 +62,8 @@ module.exports = function(app) {
         });
     });
 
+
+    // ----------- THIS ROUTE HITS SUCCESSFULLY, BUT I CAN'T GET THE SEQUELIZE QUERY TO WORK ----------- //
     // DELETE route for deleting posts
     app.delete("/api/employees/:id", function(req, res) {
 
@@ -75,16 +77,16 @@ module.exports = function(app) {
     });
 
 
-    // // PUT route for updating posts
-    // app.put("/api/posts", function(req, res) {
-    //     db.Employees.update(
-    //         req.body, {
-    //             where: {
-    //                 id: req.body.id
-    //             }
-    //         }).then(function(dbPost) {
-    //         res.json(dbPost);
-    //     });
-    // });
+    // PUT route for updating posts
+    app.put("/api/employees/:id", function(req, res) {
+        db.Employees.update(
+            req.body, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function(data) {
+            res.json(data);
+        });
+    });
 
 };
