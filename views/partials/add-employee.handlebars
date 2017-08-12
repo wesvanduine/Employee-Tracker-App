@@ -209,10 +209,12 @@
               </div>
           </div>
       </div>
-      <!-- INSERT A DROPDOWN TO CHOOSE AN EMPLOYEE TO EDIT -->
-          <form method="POST" action='/api/employees/:id?_method=UPDATE'>
-              <button type="submit" class="btn btn-primary center-block" id="edit-employee-button">Edit Employee <span class="fa fa-user-plus"></span></button>
-          </form>
+
+    {{!-- Creates the Edit/Delete buttons in the last column of the table --}}
+      <form method="POST" action='/api/employees/:id?_method=UPDATE'>
+          <button type="submit" class="btn btn-primary center-block" id="edit-employee-button">Edit Employee <span class="fa fa-user-plus"></span></button>
+      </form>
+          
       </fieldset>
   </form>
 {{!-- End Row --}}
@@ -224,5 +226,3 @@
      {{>dashboard}}
 </div>
 </div>
-<!-- /.container -->
-{{!-- <script type="text/javascript" src='../../public/js/add-employee.js'></script> --}}

@@ -66,14 +66,12 @@ module.exports = function(app) {
             },
             include: [db.Schedule]
         }).then(function(data) {
-            res.redirect('/add-hours');
+            res.json(data);
         });
     });
 
-
-
     // PUT route for updating posts
-    app.put("/api/add-hours", function(req, res) {
+    app.put("/api/add-hours/:id", function(req, res) {
         db.Schedule.update(
             req.body, {
                 where: {

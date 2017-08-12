@@ -75,6 +75,7 @@ module.exports = function(app) {
             res.json(data);
         });
     });
+    // ----------------------------------------------------- //
 
 
     // PUT route for updating posts
