@@ -1,127 +1,262 @@
-<div class="container" id='add-employee-container'>
-
 <h1 class= 'section-heading' style='text-align: center;'>Employee Management</h1>
 
-<form class="well form-horizontal" method="POST" action="/api" id="add-employee-form">
+<div class="container" id='add-employee-container'>
 
-    <fieldset>
+<div class='row'>
 
-    <!-- Form Name -->
-    <legend>Add Employee</legend>
+  <!-- Creates column for the "Add Employee" input box -->
+  <div class='col-lg-6'>
 
-    <!-- Text input-->
+  <!-- Form tag for the POST route to create an employee -->
+  <form class="well form-horizontal" method="POST" action="/api/create" id="add-employee-form">
+
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Add Employee</legend>
+
+      <!-- Text input-->
 
 
-    <div class="form-group">
-      <label class="col-md-4 control-label">First Name</label>  
-      <div class="col-md-4 inputGroupContainer">
-      <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
-        </div>
-      </div>
-    </div>
-
-    <!-- Text input-->
-
-    <div class="form-group">
-      <label class="col-md-4 control-label" >Last Name</label> 
-        <div class="col-md-4 inputGroupContainer">
+      <div class="form-group">
+        <label class="col-md-4 control-label">First Name</label>  
+        <div class="col-md-6 inputGroupContainer">
         <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Text input-->
-           <div class="form-group">
-      <label class="col-md-4 control-label">E-Mail</label>  
-        <div class="col-md-4 inputGroupContainer">  
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Last Name</label> 
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+          </div>
         </div>
       </div>
-    </div>
 
-
-    <!-- Text input-->
-           
-    <div class="form-group">
-      <label class="col-md-4 control-label">Phone #</label>  
-        <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-      <input name="phone_number" placeholder="(845)555-1212" class="form-control" type="text">
+      <!-- Text input-->
+             <div class="form-group">
+        <label class="col-md-4 control-label">E-Mail</label>  
+          <div class="col-md-6 inputGroupContainer">  
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Text input-->
-          
-    <div class="form-group">
-      <label class="col-md-4 control-label">Address</label>  
-        <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-      <input name="address" placeholder="Address" class="form-control" type="text">
+
+      <!-- Text input-->
+             
+      <div class="form-group">
+        <label class="col-md-4 control-label">Phone #</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        <input name="phone_number" placeholder="(845)555-1212" class="form-control" type="text">
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Text input-->
-     
-    <div class="form-group">
-      <label class="col-md-4 control-label">Username</label>  
-        <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-      <input name="username" placeholder="Username" class="form-control"  type="text">
+      <!-- Text input-->
+            
+      <div class="form-group">
+        <label class="col-md-4 control-label">Address</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+        <input name="address" placeholder="Address" class="form-control" type="text">
+          </div>
         </div>
       </div>
-    </div>
+
+      <!-- Text input-->
        
-    <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Username</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+        <input name="username" placeholder="Username" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+         
+      <!-- Text input-->
 
-    <div class="form-group">
-      <label class="col-md-4 control-label">Password</label>  
-        <div class="col-md-4 inputGroupContainer">
+      <div class="form-group">
+        <label class="col-md-4 control-label">Password</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input name="password" class="form-control"  type="text">
+          </div>
+      </div>
+      </div>
+
+      <!-- radio checks -->
+       <div class="form-group">
+          <label class="col-md-4 control-label">Add as Administrator?</label>
+          <div class="col-md-6">
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="1" /> Yes
+                  </label>
+              </div>
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="0" /> No
+                  </label>
+              </div>
+          </div>
+      </div>
+
+       <button type="submit" class="btn btn-success center-block" id="add-employee-button">Add Employee <span class="fa fa-user-plus"></span></button>
+
+      </fieldset>
+
+  </form>
+
+  </div>
+
+  <div class='col-lg-6'>
+
+  <!-- Form tag for the POST route to create an employee -->
+  <form class="well form-horizontal" method="POST" action="/api/edit" id="edit-employee-form">
+
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Edit Employee</legend>
+
+      <!-- Text input-->
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">First Name</label>  
+        <div class="col-md-6 inputGroupContainer">
         <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-key"></i></span>
-      <input name="password" class="form-control"  type="text">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
 
-    <!-- radio checks -->
-     <div class="form-group">
-        <label class="col-md-4 control-label">Add as Administrator?</label>
-        <div class="col-md-4">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="admin" value="1" /> Yes
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="admin" value="0" /> No
-                </label>
-            </div>
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Last Name</label> 
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+          </div>
         </div>
-    </div>
+      </div>
 
-     <button type="submit" class="btn btn-secondary" id="add-employee-button">Add Employee <span class="fa fa-user-plus"></span></button>
+      <!-- Text input-->
+             <div class="form-group">
+        <label class="col-md-4 control-label">E-Mail</label>  
+          <div class="col-md-6 inputGroupContainer">  
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
 
-    </fieldset>
 
-</form>
+      <!-- Text input-->
+             
+      <div class="form-group">
+        <label class="col-md-4 control-label">Phone #</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        <input name="phone_number" placeholder="(845)555-1212" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+            
+      <div class="form-group">
+        <label class="col-md-4 control-label">Address</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+        <input name="address" placeholder="Address" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+       
+      <div class="form-group">
+        <label class="col-md-4 control-label">Username</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+        <input name="username" placeholder="Username" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+         
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Password</label>  
+          <div class="col-md-6 inputGroupContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input name="password" class="form-control"  type="text">
+          </div>
+      </div>
+      </div>
+
+      <!-- radio checks -->
+       <div class="form-group">
+          <label class="col-md-4 control-label">Add as Administrator?</label>
+          <div class="col-md-6">
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="1" /> Yes
+                  </label>
+              </div>
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="admin" value="0" /> No
+                  </label>
+              </div>
+          </div>
+      </div>
 
 
-    <!-- Success message -->
+      <!-- INSERT A DROPDOWN TO CHOOSE AN EMPLOYEE TO EDIT -->
+
+       <button type="submit" class="btn btn-primary center-block" id="edit-employee-button">Edit Employee <span class="fa fa-user-plus"></span></button>
+
+      </fieldset>
+
+  </form>
+
+{{!-- End Row --}}
+  </div>
+
+{{!-- End Container --}}
+</div>
+
+
+{{!--     <!-- Success message -->
     <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i>      Thanks for contacting us, we will get back to you shortly.
     </div>
-
+ --}}
     <!-- Button -->
 <!--     <div class="form-group">
 
@@ -130,7 +265,12 @@
 
     </div>
  -->
+
 </div>
+
+
+    {{!-- Displays Table of all employees --}}
+     {{>dashboard}}
 
 
 </div>

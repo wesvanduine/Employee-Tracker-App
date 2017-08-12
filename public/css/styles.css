@@ -6,9 +6,17 @@ body {
 
 #add-employee-button {
 	background-color: #ff5c5c;
+	margin: 0 auto;
 }
 
 #add-employee-container {
 	margin-top: 40px;
 }
 
+#hours {
+	display: block;
+margin-left: auto;
+margin-right: auto;
+display: table-cell;
+vertical-align: middle;
+}

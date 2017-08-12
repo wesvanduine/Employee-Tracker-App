@@ -12,13 +12,8 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-
-    app.post('api/login', function(req, res) {
-        console.log(req.body.username);
-        console.log(req.body.password);
-    });
-
-    app.get('/api', function(req, res) {
+    // GET route to display a JSON view of the Employees table
+    app.get('/api/employees', function(req, res) {
         
         db.Employees.findAll({}).then(function(Employee) {
             res.json(Employee);
@@ -27,8 +22,19 @@ module.exports = function(app) {
     });
 
 
-    app.post('/api', function(req, res) {
+    // GET route to display a JSON view of the Schedule table
+    app.get('/api/schedule', function(req, res) {
+
+        db.Schedule.findAll({}).then(function(Schedule) {
+            res.json(Schedule);
+        });
+    });
+
+
+    // POST route to add an Employee to the 'Employees' table
+    app.post('/api/create', function(req, res) {
         
+        // sequelize create method
         db.Employees.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
@@ -39,97 +45,37 @@ module.exports = function(app) {
             password: req.body.password,
             admin: req.body.admin
         }).then(function(data) {
-            res.redirect('/');
-            // console.log(data);
+
+            // redirects user to same page
+            res.redirect('/add-employee');
+
+            // this doesn't work but I want it to. Need to figure out how to join 'findAll' statements so I can render 2 views
+            // res.render('partials/add-employee');
         });
     });
 
-    // app.post('/api', function(req, res) {
+    // POST route to add hour information to the Schedule table
+    app.post('/api/add-hours', function(req, res) {
 
-    //     db.Employees.create({
-    //         first_name: "first name",
-    //         last_name: 'last name'
-    //     }).then(function(data) {
-    //         console.log(data);
-    //     })
-    // });
-
-    // app.get('api/employee-add', function(req, res) {
-
-    //     db.Employees.findAll({}).then(function(data) {
-    //         res.json(data);
-    //     });
-
-    // })
+        // sequelize create method
+        db.Schedule.create({
+            date_time: req.body.first_name,
+            week: req.body.last_name,
+            timeIn: req.body.monday,
+            timeOut: req.body.tuesday,
+            totalHours: req.body.total_hours
 
 
+        }).then(function(data) {
 
+            // redirects user to current page
+            res.redirect('/time-management');
 
-    // // GET route for getting all of the posts
-    // app.get("/employees", function(req, res) {
-    //     // var query = {};
-    //     // // if (req.query.author_id) {
-    //     // //     query.AuthorId = req.query.author_id;
-    //     // // }
-    //     // // Here we add an "include" property to our options in our findAll query
-    //     // // We set the value to an array of the models we want to include in a left outer join
-    //     // // In this case, just db.Author
-    //     // db.Post.findAll({
-    //     //     where: query,
-    //     //     include: [db.Employees]
-    //     // }).then(function(dbEmployees) {
-    //     //     res.json(dbEmployees);
-    //     // });
+            // this doesn't work but I want it to. Need to figure out how to join 'findAll' statements so I can render 2 views
+            // res.render('partials/time-management')
 
-    //     res.json(res.Employees);
-
-    //     console.log(db.Employees);
-
-    // });
-
-    // app.get("/", function(req, res) {
-
-    //     db.Employees.findAll({}).then(function(data) {
-    //         var hbsObject = {
-    //             Employees: data
-    //                 // Burger: data
-    //         };
-    //         console.log(hbsObject);
-    //         res.render("index", hbsObject);
-    //     });
-    // });
-
-
-
-
-    // app.get('/', function(req, res) {
-    //     res.render
-    // }
-
-    // // Get rotue for retrieving a single post
-    // app.get("/api/posts/:id", function(req, res) {
-    //     // Here we add an "include" property to our options in our findOne query
-    //     // We set the value to an array of the models we want to include in a left outer join
-    //     // In this case, just db.Author
-    //     db.Post.findOne({
-    //         where: {
-    //             id: req.params.id
-    //         },
-    //         include: [db.Author]
-    //     }).then(function(dbPost) {
-    //         res.json(dbPost);
-    //     });
-    // });
-
-    // // POST route for saving a new post
-    // app.post("/api/add-employees", function(req, res) {
-    //     db.Employees.create(req.body).then(function(dbEmployee) {
-    //         res.json(dbEmployee);
-    //     });
-    // });
-
-
-
+        });
+    });
 
 
 
