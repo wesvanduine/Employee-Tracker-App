@@ -18,12 +18,19 @@
   },
   "homepage": "https://github.com/wesvanduine/Employee-Tracker-App#readme",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
+    "connect-session-sequelize": "^4.1.0",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
+    "express-mysql-session": "^1.2.2",
+    "express-session": "^1.15.5",
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.0",
+    "nodemon": "^1.11.0",
+    "passport": "^0.4.0",
     "sequelize": "^4.4.2"
   }
 }

@@ -74,8 +74,8 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false,
 			validate: {
 				len: {
-					args: [8,16],
-					msq: 'The password you entered needs to be 8 - 16 characters.'
+					args: [8,100],
+					msq: 'The password you entered needs to be at least 8 characters.'
 				}
 			}
 		}

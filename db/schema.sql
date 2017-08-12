@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS employeeTracker_db;
+DROP DATABASE IF EXISTS ETRAC;
 
-CREATE DATABASE employeeTracker_db;
-USE employeeTracker_db;
+CREATE DATABASE ETRAC;
+USE ETRAC;

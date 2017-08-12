@@ -4,7 +4,9 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
+const path = require("path");
+const db = require('../models')
+const passport = require('passport');
 
 // Routes
 // =============================================================
@@ -21,11 +23,21 @@ module.exports = function(app) {
     });
 
     app.get('/dashboard', function(req, res) {
-        res.render('partials/dashboard');
+
+        db.Employees.findAll({}).then(function(data) {
+            console.log("Redirect to dashboard succesful");
+            // console.log('User: ' + req.user);
+            // console.log('Authenticated: ' + req.isAuthenticated());
+            res.render("partials/dashboard", { Employees: data });
+        });
     });
 
     app.get('/team', function(req, res) {
         res.render('partials/team');
+    });
+
+    app.get('/add-employee', function(req, res) {
+        res.render('partials/add-employee');
     });
 
 };

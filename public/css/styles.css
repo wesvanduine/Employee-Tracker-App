@@ -2,3 +2,16 @@ body {
 	background-color: #fff;
 }
 
+<<<<<<< HEAD
+=======
+#success_message{ display: none;}
+
+#add-employee-button {
+	background-color: #ff5c5c;
+}
+
+#add-employee-container {
+	margin-top: 40px;
+}
+
+>>>>>>> fff86807d6ab2cba3e33ed8560fb798006aeb658
