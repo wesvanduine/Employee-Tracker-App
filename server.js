@@ -7,11 +7,20 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require('method-override');
+var cookieParser = require('cookie-parser');
+// var mysql = require('mysql');
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+// Authentication Packages
+var session = require('express-session');
+var passport = require('passport');
+// var MySQLStore = require('express-mysql-session')(session);
+// initalize sequelize with session store
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -24,6 +33,33 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+var sequelize = new db.Sequelize(
+"ETRAC",
+"root",
+"raptor22", {
+    "dialect": "mysql",
+    "storage": "./session.mysql"
+});
+
+var myStore = new SequelizeStore({
+    db: sequelize
+});
+
+app.use(cookieParser());  // Possibly not needed for session
+app.use(session({
+  // key: 'session_cookie_name',
+  secret: 'uefewehfybjboi', // could use random string generator
+  // store: myStore,
+  resave: false,
+  saveUninitialized: false, // Only creates cookie for logged in user
+  // cookie: { secure: true}  // Only use if using HTTPS
+}));
+
+myStore.sync();
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -39,6 +75,7 @@ app.set("view engine", "handlebars");
 require("./routes/html-routes.js")(app);
 require("./routes/schedule-api-routes.js")(app);
 require("./routes/employee-api-routes.js")(app);
+require("./routes/login-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

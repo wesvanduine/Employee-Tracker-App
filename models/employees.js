@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 	let Employees = sequelize.define('Employees', {
 		first_name: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: false,
 			validate: {
 				len: [1]
 			}
@@ -47,10 +47,16 @@ module.exports = function(sequelize, DataTypes) {
 				is: /[a-z\A-Z\d]/g
 			}
 		},
+		// Determine employee admin access
+		admin: {
+			type: DataTypes.BOOLEAN,
+			allowNull: false,
+			defaultValue: false
+		},
 
 		username: {
 			type: DataTypes.STRING,
-			allowNull: true,
+			allowNull: false,
 			unique: {
 				args: true,
 				msg: 'Oops. Looks like this username has been taken. Please choose another one.',
@@ -59,27 +65,19 @@ module.exports = function(sequelize, DataTypes) {
 			validate: {
 				max: {
 					args: 15,
-					msg: 'The username you entered is invalid or longer than 20 characters.'
+					msg: 'The username you entered is invalid or more than 20 characters.'
 				}
 			}
 		},
-		
 		password: {
 			type: DataTypes.STRING, // Maybe DATATYPE.BINARY
-			allowNull: true,
-			// validate: {
-				// len: {
-				// 	args: [8,16],
-				// 	msg: 'The password you entered needs to be 8 - 16 characters.'
-				// }
-			// }
-		},
-
-		// Determine employee admin access
-		admin: {
-			type: DataTypes.BOOLEAN,
-			allowNull: true,
-			defaultValue: false
+			allowNull: false,
+			validate: {
+				len: {
+					args: [8,100],
+					msq: 'The password you entered needs to be at least 8 characters.'
+				}
+			}
 		}
 	});
 

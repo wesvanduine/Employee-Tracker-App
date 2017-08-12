@@ -4,8 +4,9 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
-var db = require('../models')
+const path = require("path");
+const db = require('../models')
+const passport = require('passport');
 
 // Routes
 // =============================================================
@@ -20,9 +21,15 @@ module.exports = function(app) {
 
     // Dashboard page (currently not being used)
     app.get('/dashboard', function(req, res) {
-        res.render("partials/dashboard")
-    });
 
+        db.Employees.findAll({}).then(function(data) {
+            console.log("Redirect to dashboard succesful");
+            // console.log('User: ' + req.user);
+            // console.log('Authenticated: ' + req.isAuthenticated());
+            res.render("partials/dashboard", { Employees: data });
+        });
+    });
+    
     // Time Management page to add hours / view Schedule table
     app.get('/time-management', function(req, res) {
 
@@ -36,7 +43,7 @@ module.exports = function(app) {
 
     // Employee management page to add employee / view Employees table
     app.get('/add-employee', function(req, res) {
-                db.Employees.findAll({}).then(function(data) {
+        db.Employees.findAll({}).then(function(data) {
 
             // console.log("your data \n",data);
             res.render("partials/add-employee", { Employees: data });
@@ -55,7 +62,7 @@ module.exports = function(app) {
 
     // Contact Us page
     app.get('/contact', function(req, res) {
-        res.render('partials/contact')
+        res.render('partials/contact');
     });
 
 

@@ -2,7 +2,6 @@ body {
 	background-color: #fff;
 }
 
-<<<<<<< HEAD
 #success_message{ display: none;}
 
 #add-employee-button {
@@ -16,10 +15,9 @@ body {
 
 #hours {
 	display: block;
-margin-left: auto;
-margin-right: auto;
-display: table-cell;
-vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	display: table-cell;
+	vertical-align: middle;
 }
-=======
->>>>>>> b2a43e79cbe3a8e1f97e4e8e94b0c784b6327158
+
