@@ -7,6 +7,7 @@
 
 // Requiring our models
 var db = require("../models");
+const bcrypt = require('bcrypt');
 
 // Routes
 // =============================================================
@@ -41,25 +42,29 @@ module.exports = function(app) {
     // POST route to add an Employee to the 'Employees' table
     app.post('/api/employees', function(req, res) {
         
-        // sequelize create method
-        db.Employees.create({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            phone_number: req.body.phone_number, 
-            address: req.body.address,
-            username: req.body.username,
-            password: req.body.password,
-            admin: req.body.admin
+        // Store password entered
+        const passwordEntered = req.body.password;
+        // Create salt rounds, used to generate salt for 'bcrypt'
+        const saltRounds = 10;
+        // Generate a salt and a hash for password, using 'bcrypt'
+        bcrypt.hash(passwordEntered, saltRounds).then(passwordHash => {
+            // Create and add new employee to database
+            db.Employees.create({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                phone_number: req.body.phone_number, 
+                address: req.body.address,
+                username: req.body.username,
+                password: passwordHash, // Store hash in database
+                admin: req.body.admin
+            }).then(function(data) {
+                res.redirect('/time-management');
+                // console.log(data);
+            });
 
-        }).then(function(data) {
-
-            // redirects user to same page
-            res.redirect('/add-employee');
-
-            // this doesn't work but I want it to. Need to figure out how to join 'findAll' statements so I can render 2 views
-            // res.render('partials/add-employee');
         });
+        
     });
 
 
