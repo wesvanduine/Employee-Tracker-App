@@ -46,8 +46,13 @@
                 <td>{{ createdAt }}</td>
                 {{!-- <td>{{ updatedAt }}</td> --}}
                 <td> 
-                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>   
-                    <a href="/api/delete/:id"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    <form method="POST" action='/api/edit/:id?_method=UPDATE'>
+                        <button type='submit'><span class="glyphicon glyphicon-pencil"></span></button>
+                    </form>
+
+                    <form method="POST" action='/api/employees/:id?_method=DELETE'>
+                        <button type='submit'><span class="glyphicon glyphicon-remove-circle"></span></button>
+                    </form>
                 </td>
             </tr>
 

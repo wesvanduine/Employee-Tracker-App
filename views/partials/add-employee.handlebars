@@ -258,7 +258,10 @@
 
       <!-- INSERT A DROPDOWN TO CHOOSE AN EMPLOYEE TO EDIT -->
 
-       <button type="submit" class="btn btn-primary center-block" id="edit-employee-button">Edit Employee <span class="fa fa-user-plus"></span></button>
+
+          <form method="POST" action='/api/edit/:id?_method=UPDATE'>
+              <button type="submit" class="btn btn-primary center-block" id="edit-employee-button">Edit Employee <span class="fa fa-user-plus"></span></button>
+          </form>
 
       </fieldset>
 
