@@ -23,7 +23,7 @@
                 <th>Phone #</th>
                 <th>Address</th>
                 <th>Username</th>
-                <th>Password</th>
+                {{!-- <th>Password</th> --}}
                 <th>Admin (y/n)</th>
                 <th>Created At</th>
                 {{!-- <th>Updated At</th> --}}
@@ -41,13 +41,18 @@
                 <td>{{ phone_number }}</td>
                 <td>{{ address }}</td>
                 <td>{{ username }}</td>
-                <td>{{ password }}</td>
+{{!--                 <td>{{ password }}</td> --}}
                 <td>{{ admin }}</td>
                 <td>{{ createdAt }}</td>
                 {{!-- <td>{{ updatedAt }}</td> --}}
                 <td> 
-                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>   
-                    <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    <form method="POST" action='/api/edit/:id?_method=UPDATE'>
+                        <button type='submit'><span class="glyphicon glyphicon-pencil"></span></button>
+                    </form>
+
+                    <form method="POST" action='/api/employees/:id?_method=DELETE'>
+                        <button type='submit'><span class="glyphicon glyphicon-remove-circle"></span></button>
+                    </form>
                 </td>
             </tr>
 
