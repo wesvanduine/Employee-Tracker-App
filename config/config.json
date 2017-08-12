@@ -1,9 +1,15 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "raptor22",
     "database": "ETRAC",
     "host": "127.0.0.1",
+=======
+    "password": "Stars4life",
+    "database": "employeeTracker_db",
+    "host": "localhost",
+>>>>>>> 5da39d6f86af04ec4c0444a4bfdf3684667fc987
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +20,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use_env_variable":"JAWSDB_URL",
+    "dialect": "mysql2"
   }
 }
