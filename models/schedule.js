@@ -1,15 +1,17 @@
 module.exports = function(sequalize, DataTypes) {
 
 	let Schedule = sequalize.define("Schedule", {
+			// first_name
 			date_time: {
-				type: DataTypes.INTEGER(255),
+				type: DataTypes.STRING,
 				allowNull: true,
 				validate: {
 					len: [1]
 				}
 			},
+			// last_name
 			week: {
-				type: DataTypes.INTEGER(255),
+				type: DataTypes.STRING,
 				allowNull: true,
 				validate: {
 					len: [1]

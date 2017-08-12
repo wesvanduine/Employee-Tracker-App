@@ -45,7 +45,7 @@ module.exports = function(app) {
         db.Schedule.create({
             date_time: req.body.first_name,
             week: req.body.last_name,
-            totalHours: req.body.sum
+            totalHours: req.body.total_hours
         }).then(function(data) {
 
             // redirects user to current page
