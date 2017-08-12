@@ -1,9 +1,6 @@
 <div class='container'>
-
     <form class="well form-horizontal" method="POST" action="/api/add-hours" id="add-employee-form">
-
-    <legend>Add Hours</legend>
-
+        <legend>Add Hours</legend>
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
@@ -18,69 +15,93 @@
                 </div>
             </div>
         </div>
-
         <div class="row" id='hours'>
             <div class="col-sm-1">
                 <div class="form-group">
                     <label class="control-label">Monday</label>
-                    <input name='monday' class="form-control" type="text">
+                    <input name='monday' class="form-control txt" type="text">
                 </div>
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
                     <label class="control-label">Tuesday</label>
-                    <input name='tuesday' class="form-control" type="text">
+                    <input name='tuesday' class="form-control txt" type="text">
                 </div>
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
                     <label class="control-label">Wednesday</label>
-                    <input name='wednesday' class="form-control" type="text">
+                    <input name='wednesday' class="form-control txt" type="text">
                 </div>
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
                     <label class="control-label">Thursday</label>
-                    <input name='thursday' class="form-control" type="text">
+                    <input name='thursday' class="form-control txt" type="text">
                 </div>
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
                     <label class="control-label">Friday</label>
-                    <input name='friday' class="form-control" type="text">
+                    <input name='friday' class="form-control txt" type="text">
                 </div>
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
                     <label class="control-label">Saturday</label>
-                    <input name='saturday' class="form-control" type="text">
+                    <input name='saturday' class="form-control txt" type="text">
                 </div>
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
                     <label class="control-label">Sunday</label>
-                    <input name='sunday' class="form-control" type="text">
+                    <input name='sunday' class="form-control txt" type="text">
                 </div>
             </div>
             <div class="col-sm-2">
                 <div class="form-group">
                     <label class="control-label">Total Hours</label>
-                    <input name='total_hours' class="form-control" type="text">
+                    <span name='total_hours' class="form-control" id="sum" type="text"></span>
                 </div>
             </div>
-
-
-    
             <div class="col-sm-2">
-            
                 <button class="btn btn-primary btn-block" type="submit">Submit Hours</button>
-                
             </div>
-
-
-
         </div>
     </form>
+
+<!-- logic to handle the auto add of hours -->
+
+    <script>
+    $(document).ready(function() {
+
+        //iterate through each textboxes and add keyup
+        //handler to trigger sum event
+        $(".txt").each(function() {
+
+            $(this).keyup(function() {
+                calculateSum();
+            });
+        });
+
+    });
+
+    function calculateSum() {
+
+        var sum = 0;
+        //iterate through each textboxes and add the values
+        $(".txt").each(function() {
+
+            //add only if the value is number
+            if (!isNaN(this.value) && this.value.length != 0) {
+                sum += parseFloat(this.value);
+            }
+
+        });
+        //.toFixed() method will roundoff the final sum to 2 decimal places
+        $("#sum").html(sum.toFixed(2));
+    }
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </div>
