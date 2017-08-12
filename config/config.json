@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "Stars4life",
     "database": "employeeTracker_db",
     "host": "localhost",
     "dialect": "mysql"
@@ -14,7 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable":"JawsDB_UR",
+    "use_env_variable":"JawsDB_URL",
     "dialect": "mysql"
   }
 }
